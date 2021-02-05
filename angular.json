@@ -35,7 +35,6 @@
           },
           "configurations": {
             "production": {
-              "deployUrl": "https://sheltered-beyond-68118.herokuapp.com/schools/list",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
