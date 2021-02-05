@@ -62,8 +62,6 @@ export class SchoolService {
     document.getElementById('loading')
       .style.display = 'none';
     // @ts-ignore
-    document.getElementById('overlay').style.display = 'none';
-
   }
 
 // tslint:disable-next-line:typedef
@@ -71,12 +69,11 @@ export class SchoolService {
 
     /*Setting display of spinner
      element to block / visible*/
-     
+
     // @ts-ignore
     document.getElementById('loading')
       .style.display = 'block';
     // @ts-ignore
-    document.getElementById('overlay').style.display = 'cover';
   }
 
 
