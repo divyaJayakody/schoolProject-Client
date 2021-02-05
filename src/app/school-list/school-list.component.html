@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center">
+  <span class="sr-only" id="loading"></span>
+
+  <div class="table-container">
+
+    <div class="example-header" style="margin-top:1%">
+      <mat-form-field>
+        <span matSuffix> <i class="material-icons" style="size:36px;">search</i> </span>
+        <input type="search" matInput (keyup)="applyFilter($any($event.target))" placeholder="Filter"/>
+      </mat-form-field>
+      <button (click)="addSchoolPopUp()" style="float: right;background-color: darkcyan;height:50px;width:50px"
+              mat-mini-fab>
+        <mat-icon>add</mat-icon>
+      </button>
+
+    </div>
+
+    <mat-table #table matSort [dataSource]="dataSource">
+
+      <ng-container matColumnDef="schoolName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>School</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.schoolName}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.address.street}} , {{row.address.suburb}} , {{row.address.postcode}}
+          , {{row.address.state}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="noOfStudents">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Number of Students</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.noOfStudents}}</mat-cell>
+      </ng-container>
+
+
+      <mat-divider></mat-divider>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <!-- <mat-row *matRowDef="let row; columns: displayedColumns" [routerLink]="['../connectionDetails']" (click)="viewQuota(row)" ></mat-row> -->
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+    </mat-table>
+    <!--    <mat-card *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center">-->
+    <!--      <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>-->
+    <!--    </mat-card>-->
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+
+</div>

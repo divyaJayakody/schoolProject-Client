@@ -1,0 +1,87 @@
+<div mat-dialog-content id="matDiagContent">
+  <form [formGroup]="addSchlVald">
+    <h1>Add New School</h1>
+    <mat-form-field>
+      <mat-label>Name of the school</mat-label>
+      <input matInput formControlName="schoolName">
+      <mat-error *ngIf="addSchlVald.controls['schoolName'].hasError('required')">
+        School Name is Required!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['schoolName'].hasError('maxlength')">
+        School Name should be limited to 50 characters only!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Street</mat-label>
+      <input matInput formControlName="street">
+      <mat-error *ngIf="addSchlVald.controls['street'].hasError('required')">
+        Street is Required!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['street'].hasError('maxlength')">
+        Street should be limited to 50 characters only!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Suburb</mat-label>
+      <input matInput formControlName="suburb">
+      <mat-error *ngIf="addSchlVald.controls['suburb'].hasError('required')">
+        Suburb is Required!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['suburb'].hasError('maxlength')">
+        Suburb should be limited to 50 characters only!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Postal Code</mat-label>
+      <input matInput formControlName="postcode">
+      <mat-error *ngIf="addSchlVald.controls['postcode'].hasError('required')">
+        Postal Code is Required!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['postcode'].hasError('max')">
+        Postal Code must range between 11111 and 99999!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['postcode'].hasError('min')">
+        Postal Code must range between between 11111 and 99999!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['postcode'].hasError('pattern')">
+        Postal Code is only allowed to have digits!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>State</mat-label>
+      <input matInput formControlName="state">
+      <mat-error *ngIf="addSchlVald.controls['state'].hasError('required')">
+        State is Required!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['state'].hasError('maxlength')">
+        State should be limited to 50 characters only!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Current Student Population</mat-label>
+      <input matInput formControlName="noOfStudents">
+      <mat-error *ngIf="addSchlVald.controls['noOfStudents'].hasError('required')">
+        Student population is Required!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['noOfStudents'].hasError('max')">
+        Student population must range between 100 and 5000!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['noOfStudents'].hasError('min')">
+        Student population must range between 100 and 5000!
+      </mat-error>
+      <mat-error *ngIf="addSchlVald.controls['noOfStudents'].hasError('pattern')">
+        Student population must contain only digits
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button style="float: left;background-color: darkslategray;height:50px;width:50px;margin-right: 20%" mat-mini-fab
+    (click)="onNoClick()">
+    <mat-icon>clear</mat-icon>
+  </button>
+  <button style="float: right;background-color: darkcyan;height:50px;width:50px;margin-left: 40%" mat-mini-fab
+    (click)="save()" cdkFocusInitial>
+    <mat-icon>done</mat-icon>
+  </button>
+</div>

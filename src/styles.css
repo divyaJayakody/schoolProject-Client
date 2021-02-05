@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Roboto Light", "Helvetica Neue", sans-serif;}
+.container {background-color: white;width:100%;height: 100%; }
+.header {background-color: darkcyan;width:100%;margin-top: 0px;height: 100px;color:white; }
+.footer {
+  background-color: darkcyan;
+  width:100%;
+  height: 40px;
+  color:white ;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.footer p{
+  margin: 1%;
+}
+.table-container{width: 80%;margin-left: 9%;margin-right:9%}
+
+.mat-row:nth-child(even){
+  background-color: lightcyan;
+}
+.mat-row:nth-child(odd){
+  background-color: white;
+}
+
+.mat-header-cell {
+  flex-direction: row;
+  justify-content: left;
+
+}
+
+.mat-cell {
+  text-align: center;
+  justify-content:left;
+}
+
+.mat-column-schoolName {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 28% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.mat-column-address {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 50% !important;
+  width: 50% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.mat-column-noOfStudents {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.header h1 {
+  padding-top: 2%;
+  padding-left: 2%;
+  font-size: 40px
+}
+
+.column {
+  width:100%;
+  height:100px;
+  margin-left:1%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#text24{
+  font-size:48px; color:white; float:left; font-weight:bold;line-height:48px;
+}
+
+#icon{
+  height:60px; width:60px;
+  display:inline;
+  vertical-align:middle;
+  margin-right: 10px;
+}
+.mat-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.mat-form-field{
+  margin-left:10%;
+  margin-right:10%;
+  width:79%;
+}
+
+#matDiagContent {
+  text-align: center;
+  color: darkcyan;
+  font-weight: 3px;
+}
+
+
+#loading{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid darkcyan;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.success{
+  background: green;
+  color: white;
+}
+
+.warning{
+  background:orangered;
+  color: white;
+}
+
+.error{
+  background: darkred;
+  color: white;
+}
