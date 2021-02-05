@@ -1,3 +1,4 @@
+// Data Base Model Structure
 export class School {
 
   constructor(
